@@ -7,6 +7,15 @@ import Link from 'next/link';
 
 const Index = ({ posts }) =>
   <div>
+    <style jsx>
+      {`
+        .post-link {
+          text-decoration: none;
+          color: #fff;
+          font-size: 18px;
+        }
+      `}
+    </style>
     <Header />
     {
       posts.map(x =>
@@ -15,7 +24,7 @@ const Index = ({ posts }) =>
           <CardText>
             <RaisedButton fullWidth={true} primary={true}>
               <Link href={`/post?id=${x.id}`} as={`/blog/${x.id}`}>
-                <a>
+                <a className="post-link">
                   Click to view post!
                 </a>
               </Link>
